@@ -40,6 +40,7 @@ p {
   color: white;
 }
 
+// order
 .panes-wrapper .pane {
   &.top {
     &.left {
@@ -84,78 +85,63 @@ p {
   }
 }
 
+// background-image
 .panes-wrapper .pane {
   background-image: var(--image);
   background-repeat: no-repeat;
   box-shadow: 3px 3px 7px -3px rgba(0, 0, 0, 0.35);
 
-  &.top,
-  &.bottom {
-    height: var(--sticky-pane-size);
+  $v: top, middle, bottom;
+  $h: left, center, right;
+  @each $row in $v {
+    $p: $row;
+    @if ($row == middle) {
+      $p: center;
+    }
+    @each $col in $h {
+      &.#{$row}.#{$col} {
+        background-position: $p $col;
+      }
+    }
   }
+}
 
+// position, size
+.panes-wrapper .pane {
   &.top {
     top: 0;
+    height: var(--sticky-pane-size);
     margin-bottom: var(--sticky-pane-size);
-    background-position: top center;
-
-    &.left {
-      background-position: top left;
-    }
-
-    &.right {
-      background-position: top right;
-    }
   }
 
   &.bottom {
     bottom: 0;
+    height: var(--sticky-pane-size);
     margin-top: var(--sticky-pane-size);
-    background-position: bottom;
-
-    &.left {
-      background-position: bottom left;
-    }
-
-    &.right {
-      background-position: bottom right;
-    }
   }
 
   &.middle {
+    height: var(--center-pane-size);
     margin-bottom: calc(var(--sticky-pane-size) * -1);
     margin-top: calc(var(--sticky-pane-size) * -1);
-    height: var(--center-pane-size);
-    background-position: center;
-
-    &.left {
-      background-position: left;
-    }
-
-    &.right {
-      background-position: right;
-    }
-  }
-
-  &.left,
-  &.right {
-    width: var(--sticky-pane-size);
   }
 
   &.left {
     left: 0;
+    width: var(--sticky-pane-size);
     margin-right: var(--sticky-pane-size);
   }
 
   &.right {
     right: 0;
+    width: var(--sticky-pane-size);
     margin-left: var(--sticky-pane-size);
   }
 
   &.center {
+    width: var(--center-pane-size);
     margin-left: calc(var(--sticky-pane-size) * -1);
     margin-right: calc(var(--sticky-pane-size) * -1);
-    width: var(--center-pane-size);
   }
 }
 
