@@ -48,3 +48,18 @@ p {
   background-position: 50% 100%;
   box-shadow: 3px 3px 7px -3px rgba(0, 0, 0, 0.35);
 }
+
+.panes-wrapper .middle-right-pane {
+  position: sticky;
+  order: 5;
+  right: 0;
+  margin-left: var(--sticky-pane-size);
+  margin-bottom: calc(var(--sticky-pane-size) * -1);
+  margin-top: calc(var(--sticky-pane-size) * -1);
+  width: var(--sticky-pane-size);
+  height: 600px;
+  background-image: url("../images/background.jpg");
+  background-repeat: no-repeat;
+  background-position: 100% 50%;
+  box-shadow: 3px 3px 7px -3px rgba(0, 0, 0, 0.35);
+}
