@@ -1,0 +1,35 @@
+p {
+  font-family: Lato;
+}
+
+.scrollable-element {
+  width: 100%;
+  max-width: 640px;
+  height: 550px;
+  overflow: auto;
+}
+
+.scrollable-element .panes-wrapper {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 750px;
+  height: 750px;
+  background-color: beige;
+}
+
+.panes-wrapper .middle-center-pane {
+  position: relative;
+  order: 4;
+  width: var(--center-pane-size);
+  height: var(--center-pane-size);
+  margin-left: calc(var(--sticky-pane-size) * -1);
+  margin-right: calc(var(--sticky-pane-size) * -1);
+  margin-top: calc(var(--sticky-pane-size) * -1);
+  margin-bottom: calc(var(--sticky-pane-size) * -1);
+  background-image: url("../images/background.jpg");
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
