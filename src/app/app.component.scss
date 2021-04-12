@@ -29,7 +29,7 @@ p {
   margin-right: calc(var(--sticky-pane-size) * -1);
   margin-top: calc(var(--sticky-pane-size) * -1);
   margin-bottom: calc(var(--sticky-pane-size) * -1);
-  background-image: url("../images/background.jpg");
+  background-image: var(--image);
   background-repeat: no-repeat;
   background-position: 50% 50%;
 }
@@ -43,7 +43,7 @@ p {
   margin-top: var(--sticky-pane-size);
   width: 600px;
   height: 75px;
-  background-image: url("../images/background.jpg");
+  background-image: var(--image);
   background-repeat: no-repeat;
   background-position: 50% 100%;
   box-shadow: 3px 3px 7px -3px rgba(0, 0, 0, 0.35);
@@ -58,7 +58,7 @@ p {
   margin-top: calc(var(--sticky-pane-size) * -1);
   width: var(--sticky-pane-size);
   height: 600px;
-  background-image: url("../images/background.jpg");
+  background-image: var(--image);
   background-repeat: no-repeat;
   background-position: 100% 50%;
   box-shadow: 3px 3px 7px -3px rgba(0, 0, 0, 0.35);
